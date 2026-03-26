@@ -3,24 +3,24 @@ import { useState } from "react";
 
 const services = [
   { 
-    title: "Design Systems", 
-    desc: "Crafting scalable visual languages, robust component libraries, and pixel-perfect design tokens.",
-    img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=2000"
-  },
-  { 
-    title: "Fullstack Eng.", 
-    desc: "Building high-performance, resilient end-to-end architectures using modern Node/React stacks.",
+    title: "Frontend Arch.", 
+    desc: "Building responsive, high-fidelity interfaces with React, delivering fluid animations and scalable state management.",
     img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2000"
   },
   { 
-    title: "Creative UI/UX", 
-    desc: "Designing hyper-immersive, award-winning user interfaces focused on WebGL rendering.",
-    img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000"
+    title: "Backend & APIs", 
+    desc: "Designing robust RESTful architectures and scalable server-side logic with Node.js, Express, MongoDB, and MySQL.",
+    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2000"
   },
   { 
-    title: "Optimization", 
-    desc: "Deep-diving into browser rendering pipelines to eliminate lag and ensure 60fps locking.",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000"
+    title: "Problem Solving", 
+    desc: "Leveraging C, C++, Java, and Python to solve complex algorithmic challenges and write optimized, clean code.",
+    img: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=2000"
+  },
+  { 
+    title: "Web Experiences", 
+    desc: "Crafting immersive, cinematic web experiences with pixel-perfect responsive design and performant micro-interactions.",
+    img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000"
   }
 ];
 
@@ -59,7 +59,7 @@ const About = () => {
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-sm uppercase tracking-[0.3em] font-medium opacity-60">Capabilities (04)</h2>
           <p className="text-xl md:text-3xl font-light leading-snug opacity-80 max-w-3xl text-right">
-            We operate at the exact intersection of digital artistry and hardcore engineering.
+            I build at the intersection of logical engineering and dynamic, immersive web design.
           </p>
         </div>
 
@@ -85,21 +85,21 @@ const About = () => {
                 <img 
                   src={service.img} 
                   alt="bg" 
-                  className="w-full h-full object-cover grayscale" 
+                  className="w-full h-full object-cover" 
                 />
               </motion.div>
 
               {/* CONTENT ABOVE IMAGE */}
               <div className="relative z-10 w-full flex flex-col md:flex-row justify-between items-center md:items-end pointer-events-none px-4 md:px-8">
                 {/* Title with React Bits style split animation */}
-                <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter mix-blend-difference text-white">
+                <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white">
                   <SplitText isHovered={hoveredIndex === i}>
                     {service.title}
                   </SplitText>
                 </h3>
 
                 {/* Description fades in alongside image */}
-                <p className="max-w-xs text-sm md:text-base font-light opacity-50 text-right mt-4 md:mt-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-difference text-white">
+                <p className="max-w-xs text-sm md:text-base font-light opacity-50 text-right mt-4 md:mt-0 transition-opacity duration-500 group-hover:opacity-100 text-white relative z-10">
                   {service.desc}
                 </p>
               </div>

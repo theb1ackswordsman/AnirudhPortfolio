@@ -13,7 +13,7 @@ const projectsData = [
     year: "2024",
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200",
     color: "#0f172a", // Dark Blue
-    link: "#"
+    link: "https://github.com/theb1ackswordsman/GoPlanner"
   },
   {
     title: "HerbTrace",
@@ -21,7 +21,7 @@ const projectsData = [
     year: "2024",
     image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=1200",
     color: "#14532d", // Dark Green
-    link: "#"
+    link: "https://github.com/theb1ackswordsman/Ayurvedic-Herb-Traceability-System"
   },
   {
     title: "Facade",
@@ -29,7 +29,7 @@ const projectsData = [
     year: "2023",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1200",
     color: "#4c0519", // Dark Red
-    link: "#"
+    link: "https://github.com/theb1ackswordsman/Ayurvedic-Herb-Traceability-System"
   }
 ]
 
@@ -58,13 +58,16 @@ const ProjectCard = ({ project, index }) => {
   }
 
   return (
-    <motion.div 
+    <motion.a 
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
       ref={container}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="group relative flex flex-col gap-6 mb-32 last:mb-0"
+      className="group relative flex flex-col gap-6 mb-32 last:mb-0 project-card cursor-none"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -81,9 +84,16 @@ const ProjectCard = ({ project, index }) => {
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1500ms] ease-[0.16,1,0.3,1] group-hover:scale-[1.15]"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1500ms] ease-[0.16,1,0.3,1] group-hover:scale-105"
             />
           </motion.div>
+
+          {/* Reference Hover Strip overlay */}
+          <div className="absolute top-1/2 left-0 w-full h-[64px] bg-white -translate-y-1/2 origin-center scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[0.19,1,0.22,1] z-20 flex items-center justify-center">
+            <span className="text-black font-semibold text-xl tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 pointer-events-none">
+              {project.title}
+            </span>
+          </div>
         </motion.div>
         <div className="absolute inset-0 bg-white/5 -z-1" />
       </div>
@@ -110,7 +120,7 @@ const ProjectCard = ({ project, index }) => {
            </motion.div>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   )
 }
 
@@ -160,7 +170,7 @@ const Projects = () => {
         Featured Works © プロジェクト
       </ParallaxText>
 
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-5xl">
         <div className="flex flex-col">
           {projectsData.map((project, idx) => (
             <ProjectCard key={idx} project={project} index={idx} />

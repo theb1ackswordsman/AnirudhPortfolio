@@ -59,10 +59,10 @@ const Contact = () => {
 
             <div className="flex gap-10 opacity-60">
                <Magnetic>
-                 <a href="https://github.com/kaushalanirudh27" target="_blank" rel="noreferrer" className="text-sm uppercase tracking-widest hover:underline mix-blend-difference text-white">Github</a>
+                 <a href="https://github.com/theb1ackswordsman" target="_blank" rel="noreferrer" className="text-sm uppercase tracking-widest hover:underline mix-blend-difference text-white">Github</a>
                </Magnetic>
                <Magnetic>
-                 <a href="https://linkedin.com/in/anirudhkaushal" target="_blank" rel="noreferrer" className="text-sm uppercase tracking-widest hover:underline mix-blend-difference text-white">Linkedin</a>
+                 <a href="https://www.linkedin.com/in/anirudh-kaushal-32b28926a/" target="_blank" rel="noreferrer" className="text-sm uppercase tracking-widest hover:underline mix-blend-difference text-white">Linkedin</a>
                </Magnetic>
             </div>
           </motion.div>

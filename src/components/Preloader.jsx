@@ -34,12 +34,12 @@ const Preloader = ({ onComplete }) => {
       }
     } else if (!isExiting) {
       const timer = setTimeout(() => {
-        setIsExiting(true) // Trigger the Zoom Out/Fly Past
+        setIsExiting(true)
         setTimeout(() => {
           setLoading(false)
           onComplete()
-        }, 50) // Immediate handoff to site while name is zooming
-      }, 2000) // Hold name for 2s
+        }, 900) // fire after the fade-out is mostly done
+      }, 1500) // Hold name for 1.5s
       return () => clearTimeout(timer)
     }
   }, [index, showName, isExiting, onComplete])
@@ -47,11 +47,11 @@ const Preloader = ({ onComplete }) => {
   return (
     <AnimatePresence>
       {loading && (
-        <motion.div 
+        <motion.div
           className="fixed inset-0 z-[200] flex items-center justify-center bg-black overflow-hidden select-none"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7, ease: 'easeInOut' }}
         >
           {/* Subtle Background Metadata */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.02] overflow-hidden select-none">
@@ -91,11 +91,10 @@ const Preloader = ({ onComplete }) => {
                         scale: 1, 
                         y: 0,
                       }}
-                      exit={{ 
-                        scale: 150, 
-                        opacity: 0, 
-                        filter: "blur(50px)",
-                        transition: { duration: 1.2, ease: [0.85, 0, 0.15, 1] } 
+                      exit={{
+                        opacity: 0,
+                        scale: 1.05,
+                        transition: { duration: 0.6, ease: 'easeInOut' }
                       }}
                       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                       className="flex flex-col items-center"

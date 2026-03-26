@@ -22,7 +22,7 @@ const Footer = () => {
           className="flex gap-10 text-xs uppercase tracking-widest"
         >
            <a href="#home" className="hover:opacity-100 transition-opacity">Back to top</a>
-           <a href="https://github.com/kaushalanirudh27" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity">Built with Love</a>
+           <a href="https://github.com/theb1ackswordsman" target="_blank" rel="noreferrer" className="hover:opacity-100 transition-opacity cursor-hover interactive">Built with Love</a>
         </motion.div>
 
       </div>
