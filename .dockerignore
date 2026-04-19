@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.gitignore
+*.md
+Jenkinsfile
+docker-compose.yml
+.npmrc
+.eslint.config.js
+.vscode
